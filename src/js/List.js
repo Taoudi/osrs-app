@@ -1,38 +1,29 @@
+import React, { Component } from 'react';
+
+
 class ListItem extends Component {
-    state = { color : 'white' };
-    onClick = () => {
-       this.setState({ color: 'red' });
-    }
+    constructor(props) {
+        super(props);
+        this.state = {isToggleOn: true};
+    
+        // This binding is necessary to make `this` work in the callback
+        this.handleClick = this.handleClick.bind(this);
+      }
+    
+     handleClick(e) {
+        this.setState(state => ({
+            isToggleOn: !state.isToggleOn
+          }));
+      }
+
     render () {
          return (
-          <li key={i} className="nameBox">
-              {this.props.value}
-           <div onClick={this.onClick} style={{backgroundColor: props.color}} 
-      className="clickBox">
-          </div>
-         </li>
+            [<button onClick={this.handleClick}>
+            Click Here!
+         </button>,
+        
+        <div>{this.state.isToggleOn ? 'TOGGLED' : ''}</div>]
      );
     }
   }
-  
-  
-  const CheckBlock = props => {
-  
-     console.log(props.change);
-     console.log(props.color);
-  
-      let mainList = [];
-  
-      for(let i = 0; i <= 3; i++)
-      {
-          mainList[i] = <ListItem key={i} value={props.MainList[i]} />
-      }
-  
-  
-         return (
-          <Aux>
-              <ul className = "mainList">{mainList}</ul>
-              <button>Enter</button>
-          </Aux>
-         );
-  };
+  export default ListItem;

@@ -1,18 +1,20 @@
 import React, { useState, useEffect } from 'react';
-import ListItem from './List'
+import ListItem from './ListItem'
 import '../css/App.css';
 
 function App() {
-  const [currentTime, setCurrentTime] = useState(0);
-  const [currentStatus, setCurrentStatus] = useState(0);
+  
+  const [bossName, setBossName] = useState(0);
+  const [bossItems, setBossItems] = useState(0);
+
 
   useEffect(() => {
-    fetch('/time').then(res => res.json()).then(data => {
-      setCurrentTime(data.time);
-      setCurrentStatus(data.skim);
+    fetch('/test').then(res => res.json()).then(data => {
+      setBossName(data.name);
+      setBossItems(data.items);
+      console.table(data)
     });
   }, []);
-
 
 
 
@@ -20,11 +22,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <p>
-          {currentTime} <br></br>
-          {currentStatus}
-        </p>
-        <ListItem name="TOGGLED"></ListItem>
+        <ListItem name={bossName} items={bossItems}></ListItem>
       </header>
     </div>
   );

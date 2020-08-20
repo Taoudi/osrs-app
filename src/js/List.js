@@ -22,7 +22,7 @@ class ListItem extends Component {
             Click Here!
          </button>,
         
-        <div>{this.state.isToggleOn ? 'TOGGLED' : ''}</div>]
+        <div>{this.state.isToggleOn ? this.props.name : ''}</div>]
      );
     }
   }

@@ -24,7 +24,7 @@ function App() {
           {currentTime} <br></br>
           {currentStatus}
         </p>
-        <ListItem></ListItem>
+        <ListItem name="TOGGLED"></ListItem>
       </header>
     </div>
   );

@@ -17,3 +17,18 @@ def get_boss():
     boss = Boss('Cerberus', itemlist)
     print(boss.jsoned(), file=sys.stderr)
     return boss.jsoned()
+
+@app.route('/testlist')
+def get_bosses():
+    itemlist = []
+    bosslist = []
+    itemlist.append(Item("Pegasian Crystal",30000000))
+    itemlist.append(Item("Eternal Crystal",2654963))
+    bosslist.append(Boss('Cerberus', itemlist).jsoned())
+    itemlist=[]
+    itemlist.append(Item("Abyssal Whip",20000000))
+    itemlist.append(Item("Abyssal Bludgeon",2000000))
+    bosslist.append(Boss('Abyssal Sire', itemlist).jsoned())
+
+    print({'bosses' : bosslist}, file=sys.stderr)
+    return {'bosses' : bosslist}

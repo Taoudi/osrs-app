@@ -1,19 +1,19 @@
+import ListItem from './ListItem'
+import React, { Component } from 'react';
+
+
 class List extends Component {
     constructor(props) {
         super(props);
-    
-        // This binding is necessary to make `this` work in the callback
-        this.handleClick = this.handleClick.bind(this);
       }
-    
-     makeList(e) {
-        this.setState(state => ({
-            isToggleOn: !state.isToggleOn
-          }));
-      }
+  
 
     render () {
-        
+      return (
+        [
+         <div>{Array.from(this.props.items).map(item =>  <ListItem name={item.name} items={item.items}></ListItem>)}</div>
+        ]
+      );
     }
   }
   export default List;

@@ -20,9 +20,11 @@ class Boss:
 
 
 class Item:
-    def __init__(self, name, value=0):
+    def __init__(self, name, value=0,amount=1):
         self.name = name
         self.value=value
+        self.amount=amount
+
 
     def jsoned(self):
         return {

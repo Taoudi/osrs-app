@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
-
+import Button from 'react-bootstrap/Button';
+import Collapse from 'react-bootstrap/Collapse';
+import Jumbotron from 'react-bootstrap/Jumbotron';
 
 class ListItem extends Component {
     constructor(props) {
@@ -8,7 +10,6 @@ class ListItem extends Component {
         // This binding is necessary to make `this` work in the callback
         this.handleClick = this.handleClick.bind(this);
 
-        const numbers = [1,2,3];
         //this.items = Array.from(props.items);       
       }
     
@@ -27,10 +28,13 @@ class ListItem extends Component {
     render () {
          return (
             [
-              <button onClick={this.handleClick}>
+              <Jumbotron>
+              <Button variant="dark" className="btn-primary" onClick={this.handleClick}>
             {this.props.name}
-         </button>,
-        <div>{this.state.isToggleOn ? Array.from(this.props.items).map(item => <div>{item.name} - {item.value}gp</div>) : ''}</div>]
+         </Button>
+        <Collapse in={this.state.isToggleOn}><div>{Array.from(this.props.items).map(item => <p>{item.name} - {item.value}gp</p>)}</div></Collapse>
+        </Jumbotron>
+            ]
      );
     }
   }

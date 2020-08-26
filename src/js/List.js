@@ -1,5 +1,6 @@
 import ListItem from './ListItem'
 import React, { Component } from 'react';
+import '../css/App.css';
 
 
 class List extends Component {
@@ -11,7 +12,7 @@ class List extends Component {
     render () {
       return (
         [
-         <div>{Array.from(this.props.items).map(item =>  <ListItem name={item.name} items={item.items}></ListItem>)}</div>
+         <div>{Array.from(this.props.items).map(item =>  <ListItem class="grid" name={item.name} items={item.items} uri={item.uri}></ListItem>)}</div>
         ]
       );
     }

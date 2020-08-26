@@ -14,6 +14,7 @@ class Boss:
 
         return {
             "name":str(self.name),
+            "uri":self.name.lower().replace(' ','_')+'.png',
             "items":items
         }
 
@@ -29,5 +30,5 @@ class Item:
     def jsoned(self):
         return {
             "name":str(self.name),
-            "value":str(self.value)
+            "value":str(self.value),
          }

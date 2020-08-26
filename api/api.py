@@ -29,6 +29,17 @@ def get_bosses():
     itemlist.append(Item("Abyssal Whip",20000000))
     itemlist.append(Item("Abyssal Bludgeon",2000000))
     bosslist.append(Boss('Abyssal Sire', itemlist).jsoned())
-
+    itemlist=[]
+    itemlist.append(Item("Trident of the Seas",20000000))
+    itemlist.append(Item("Tentacle",2000000))
+    bosslist.append(Boss('Kraken', itemlist).jsoned())
+    itemlist=[]
+    itemlist.append(Item("Smoke Battlestaff",20000000))
+    itemlist.append(Item("Amulet",2000000))
+    bosslist.append(Boss('Thermonuclear Smoke Devil', itemlist).jsoned())
+    itemlist=[]
+    itemlist.append(Item("Twisted Bow",20000000))
+    itemlist.append(Item("Elder Maul",2000000))
+    bosslist.append(Boss('Chambers of Xeric', itemlist).jsoned())
     print({'bosses' : bosslist}, file=sys.stderr)
     return {'bosses' : bosslist}

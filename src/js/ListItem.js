@@ -1,15 +1,17 @@
-import React, { Component } from 'react';
+import React, { Component,Image } from 'react';
 import Button from 'react-bootstrap/Button';
 import Collapse from 'react-bootstrap/Collapse';
 import Jumbotron from 'react-bootstrap/Jumbotron';
+import '../css/App.css';
+
 
 class ListItem extends Component {
     constructor(props) {
         super(props);
-        this.state = {isToggleOn: true};
+        this.state = {isToggleOn: false};
         // This binding is necessary to make `this` work in the callback
         this.handleClick = this.handleClick.bind(this);
-
+        this.baseUrl = "./" 
         //this.items = Array.from(props.items);       
       }
     
@@ -28,12 +30,17 @@ class ListItem extends Component {
     render () {
          return (
             [
-              <Jumbotron>
+              <Jumbotron class="grid">  
+                 <img width='28x' height='28x' src={this.baseUrl + this.props.uri} /> 
+                <p>{console.log(this.baseUrl + this.props.uri)}</p>
               <Button variant="dark" className="btn-primary" onClick={this.handleClick}>
             {this.props.name}
          </Button>
-        <Collapse in={this.state.isToggleOn}><div>{Array.from(this.props.items).map(item => <p>{item.name} - {item.value}gp</p>)}</div></Collapse>
+        <Collapse in={this.state.isToggleOn}><div>{Array.from(this.props.items).map(item => <p>{item.name} - {item.value}gp</p>)}</div>
+       </Collapse>
+
         </Jumbotron>
+
             ]
      );
     }

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect,Image } from 'react';
 import List from './List'
 import '../css/App.css';
 import Button from 'react-bootstrap/Button';
@@ -21,6 +21,7 @@ function App() {
 
   useEffect(() => {
     fetch('/testlist').then(res => res.json()).then(data => {
+      console.log(data.bosses)
       setBosses(data.bosses);
     });
   }, []);

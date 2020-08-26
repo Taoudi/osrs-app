@@ -40,3 +40,7 @@
 p {
   color: black;
 }
+
+.grid{
+  display:inline-block
+}

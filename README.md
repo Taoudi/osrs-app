@@ -1,5 +1,5 @@
 
-# random project to learn react.js aad flask.
+# random project to learn react.js and flask, themed around old school runecape.
 
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

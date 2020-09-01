@@ -32,8 +32,8 @@ class ListItem extends Component {
             [
               <Jumbotron class="grid">  
                  <img width='28x' height='28x' src={this.baseUrl + this.props.uri} /> 
-                <p>{console.log(this.baseUrl + this.props.uri)}</p>
-              <Button variant="dark" className="btn-primary" onClick={this.handleClick}>
+                <p></p>
+              <Button variant={this.props.btn_color} className="btn-primary" onClick={this.handleClick}>
             {this.props.name}
          </Button>
         <Collapse in={this.state.isToggleOn}><div>{Array.from(this.props.items).map(item => <p>{item.name} - {item.value}gp</p>)}</div>

@@ -30,13 +30,13 @@ class ListItem extends Component {
     render () {
          return (
             [
-              <Jumbotron class="grid">  
+              <Jumbotron class="grid" style={{backgroundColor: this.props.backgroundColor}} >  
                  <img width='28x' height='28x' src={this.baseUrl + this.props.uri} /> 
                 <p></p>
               <Button variant={this.props.btn_color} className="btn-primary" onClick={this.handleClick}>
             {this.props.name}
          </Button>
-        <Collapse in={this.state.isToggleOn}><div>{Array.from(this.props.items).map(item => <p>{item.name} - {item.value}gp</p>)}</div>
+        <Collapse in={this.state.isToggleOn}><div style={{color: this.props.backgroundColor}}>{Array.from(this.props.items).map(item => <p>{item.name} - {item.value}gp</p>)}</div>
        </Collapse>
 
         </Jumbotron>

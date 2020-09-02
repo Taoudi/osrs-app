@@ -10,18 +10,22 @@ function App() {
   const [bosses, setBosses] = useState(0);
   const [color, setColor] = useState('#282c34');
   const [btn_color, setBtnColor] = useState('dark');
+  const [backgroundColor, setBackGroundColor] = useState('aliceblue');
 
     const onChangeColorHandler = (val) => {
-      console.log(val.target.value)
+      //console.log(val.target.value)
           setColor(val.target.value)
 
   }
 
 
   const onChangeBtnColorHandler = (val) => {
-    console.log(val.target.value)
-
-  setBtnColor(val.target.value)
+    //console.log(val.target.value.btn_color)
+    //console.log(JSON.stringify(val.target.value.color))
+    var res = val.target.value.split(" ");
+    setColor(res[0])
+    setBtnColor(res[1])
+    setBackGroundColor(res[2])
 }
 
 
@@ -45,11 +49,8 @@ function App() {
     <div className="App" style={{backgroundColor: color}}>
       <body style={{backgroundColor: color}}></body>
       <header className="App-header" background-color={color}>
-      <p> the button color is : {btn_color} </p>
-      <p> the color is : {color} </p>
-
-        <Palette value={color} btn_value={btn_color} onChangeColor={onChangeColorHandler} onChangeBtnColor={onChangeBtnColorHandler} />
-        <List items={bosses} btn_color={btn_color}></List>
+        <Palette current={color} value={color} btn_value={btn_color} onChangeColor={onChangeColorHandler} onChangeBtnColor={onChangeBtnColorHandler} />
+        <List items={bosses} btn_color={btn_color} backgroundColor={backgroundColor}></List>
       </header>
     </div>
   );

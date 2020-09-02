@@ -12,7 +12,7 @@ class List extends Component {
     render () {
       return (
         [
-         <div width='100%'>{Array.from(this.props.items).map(item =>  <ListItem class="grid" name={item.name} items={item.items} uri={item.uri} btn_color={this.props.btn_color}></ListItem>)}</div>
+         <div >{Array.from(this.props.items).map(item =>  <ListItem class="grid" name={item.name} items={item.items} uri={item.uri} backgroundColor={this.props.backgroundColor} btn_color={this.props.btn_color}></ListItem>)}</div>
         ]
       );
     }

@@ -30,7 +30,7 @@ class ListItem extends Component {
     render () {
          return (
             [
-              <Jumbotron class="grid" style={{backgroundColor: this.props.backgroundColor}} >  
+              <Jumbotron class="grid" style={{backgroundColor: this.props.backgroundColor, width:'100%'}} >  
                  <img width='28x' height='28x' src={this.baseUrl + this.props.uri} /> 
                 <p></p>
               <Button variant={this.props.btn_color} className="btn-primary" onClick={this.handleClick}>

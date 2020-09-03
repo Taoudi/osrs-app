@@ -22,7 +22,6 @@ class Palette extends Component {
             <Button variant="warning" value='goldenrod warning aliceblue' onClick={onChangeBtnColor}/>
             <Button variant="danger" value='darkred danger aliceblue' name='colors' onClick={onChangeBtnColor}/>
             <Button variant="light" value='aliceblue light #282c34' onClick={onChangeBtnColor}/>
-
             </ul>
           ]
         );

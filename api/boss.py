@@ -31,4 +31,5 @@ class Item:
         return {
             "name":str(self.name),
             "value":str(self.value),
+            "uri":self.name.lower().replace(' ','_')+'.png'
          }

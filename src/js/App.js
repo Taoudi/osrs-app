@@ -1,5 +1,5 @@
 import React, { useState, useEffect,Image } from 'react';
-import List from './List'
+import BossList from './BossList'
 import '../css/App.css';
 import Button from 'react-bootstrap/Button';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -50,7 +50,7 @@ function App() {
       <body style={{backgroundColor: color}}></body>
       <header className="App-header" background-color={color}>
         <Palette current={color} value={color} btn_value={btn_color} onChangeColor={onChangeColorHandler} onChangeBtnColor={onChangeBtnColorHandler} />
-        <List items={bosses} btn_color={btn_color} backgroundColor={backgroundColor}></List>
+        <BossList items={bosses} btn_color={btn_color} backgroundColor={backgroundColor}></BossList>
       </header>
     </div>
   );

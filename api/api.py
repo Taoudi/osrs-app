@@ -22,24 +22,21 @@ def get_boss():
 def get_bosses():
     itemlist = []
     bosslist = []
-    itemlist.append(Item("Pegasian Crystal",30000000))
-    itemlist.append(Item("Eternal Crystal",2654963))
+    itemlist.append(Item("Twisted Bow",20000000))
+    itemlist.append(Item("Elder Maul",2000000))
+    bosslist.append(Boss('Chambers of Xeric', itemlist).jsoned())
+    itemlist=[]
+    itemlist.append(Item("Scythe of Vitur",20000000))
+    itemlist.append(Item("Ghrazi Rapier",2000000))
+    bosslist.append(Boss('Theater of Blood', itemlist).jsoned())
+    itemlist=[]
+    itemlist.append(Item("Pegasian Crystal",20000000))
+    itemlist.append(Item("Primordial Crystal",2000000))
     bosslist.append(Boss('Cerberus', itemlist).jsoned())
-    itemlist=[]
-    itemlist.append(Item("Abyssal Whip",20000000))
-    itemlist.append(Item("Abyssal Bludgeon",2000000))
-    bosslist.append(Boss('Abyssal Sire', itemlist).jsoned())
-    itemlist=[]
-    itemlist.append(Item("Trident of the Seas",20000000))
-    itemlist.append(Item("Tentacle",2000000))
-    bosslist.append(Boss('Kraken', itemlist).jsoned())
     itemlist=[]
     itemlist.append(Item("Smoke Battlestaff",20000000))
     itemlist.append(Item("Amulet",2000000))
     bosslist.append(Boss('Thermonuclear Smoke Devil', itemlist).jsoned())
-    itemlist=[]
-    itemlist.append(Item("Twisted Bow",20000000))
-    itemlist.append(Item("Elder Maul",2000000))
-    bosslist.append(Boss('Chambers of Xeric', itemlist).jsoned())
+   
     print({'bosses' : bosslist}, file=sys.stderr)
     return {'bosses' : bosslist}

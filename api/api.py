@@ -1,6 +1,7 @@
 import time
 from flask import Flask
 from boss import Item, Boss
+from item_simulator import Simulator
 import sys
 app = Flask(__name__)
 
@@ -37,6 +38,19 @@ def get_bosses():
     itemlist.append(Item("Smoke Battlestaff",20000000))
     itemlist.append(Item("Amulet",2000000))
     bosslist.append(Boss('Thermonuclear Smoke Devil', itemlist).jsoned())
-   
+    itemlist=[]
+    itemlist.append(Item("Hydra Leather",20000000))
+    itemlist.append(Item("Hydras Claw",2000000))
+    bosslist.append(Boss('Alchemical Hydra', itemlist).jsoned())
+    
+
+    sim = Simulator()
     print({'bosses' : bosslist}, file=sys.stderr)
+    total = 0
+    trials=1
+    #for i in range(trials):
+    print(sim.simulate(bosslist[0]['items']))
+    #    total+=i1
+    #print(total/trials)
+
     return {'bosses' : bosslist}

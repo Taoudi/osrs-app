@@ -41,6 +41,9 @@ function App() {
   useEffect(() => {
     fetch('/testlist').then(res => res.json()).then(data => {
       setBosses(data.bosses);
+      console.table(data.bosses[0])
+      console.table(data.bosses[0].uri)
+
     });
   }, []);
 

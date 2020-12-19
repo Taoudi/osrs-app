@@ -9,7 +9,7 @@ import '../css/App.css';
 class BossItem extends Component {
     constructor(props) {
         super(props);
-        this.state = {isToggleOn: false, text:'', value:'',open:false};
+        this.state = {isToggleOn: false, text:'', value:'',prob:'',open:false};
 
         // This binding is necessary to make `this` work in the callback
         this.handleClick = this.handleClick.bind(this);
@@ -34,13 +34,15 @@ class BossItem extends Component {
         if (this.state.text == e.name && this.state.value == e.value && e.name!='' && e.value!=''){
           this.setState(state => ({
             text:'',
-            value:''
+            value:'',
+            prob:''
           }));
         }
         else{
           this.setState(state => ({
             text:e.name,
-            value:e.value
+            value:e.value,
+            prob:e.prob
           }));
         }
         
@@ -57,15 +59,16 @@ class BossItem extends Component {
                 {this.props.name}
               </Button>
               <Collapse in={this.state.isToggleOn}>
-                <div style={{justifyContent: 'center', alignItems: 'center',color: this.props.backgroundColor ,padding:'1%'}} >{Array.from(this.props.items).map(item => 
+                <div style={{ flex: 1, flexDirection:'row',justifyContent: 'flex-start', alignItems: 'stretch',color: this.props.backgroundColor}} >{Array.from(this.props.items).map(item => 
                 <li>
                     <Button onClick={() => this.changeValue(item)}  variant="light"><img width='28x' height='28x' src={this.baseItemUrl + item.uri}></img></Button>
                 </li>
                   )}
                 <Collapse in={this.state.isToggleOn}>
-                  <p>
+                  <p> 
                     <small><b>{this.state.text}</b></small><br></br>
-                    <small><b>{this.state.value}</b></small>
+                    <small><b>{this.state.value}</b></small><br></br>
+                    <small><b>{this.state.prob}</b></small>
                   </p>
                 </Collapse>
 

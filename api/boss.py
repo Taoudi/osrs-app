@@ -1,7 +1,7 @@
 from flask import Flask
 
 class Boss:
-    def __init__(self, name, items=[]):
+    def __init__(self, name,items=[]):
         self.items = items
         self.name = name
 
@@ -21,15 +21,17 @@ class Boss:
 
 
 class Item:
-    def __init__(self, name, value=0,amount=1):
+    def __init__(self, name, value=0,prob=1/128,amount=1):
         self.name = name
         self.value=value
         self.amount=amount
+        self.prob=prob
 
 
     def jsoned(self):
         return {
             "name":str(self.name),
             "value":str(self.value),
+            "prob":str(self.prob),
             "uri":self.name.lower().replace(' ','_')+'.png'
          }
